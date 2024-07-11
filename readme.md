@@ -62,4 +62,4 @@ SOFTWARE.
 We welcome contributions from the community. If you have an idea for a new feature or improvement, please open an issue or submit a pull request. Let's build something great together!
 
 - https://instagram.com/swifttechly
-- https://discord.gg/https://discord.gg/3vejHc3Wgv
+- https://discord.gg/3vejHc3Wgv
