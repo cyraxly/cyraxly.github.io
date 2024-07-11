@@ -51,11 +51,9 @@ SOFTWARE.
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/cyrax.git
+   git clone https://github.com/cyraxly/cyraxly.github.io.git
 
 2. **Navigate to the project directory:**
-   ```bash
-   cd cyrax
 
 - Open the index.html file in your browser to view the website locally.
 - Make your own modifications and enhancements as needed.
