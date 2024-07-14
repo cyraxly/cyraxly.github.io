@@ -77,63 +77,235 @@
     </div>
   </section>
 
-  <!-- Code Drops Section -->
-  <section class="section__container code-drops" id="code-drops">
-    <h2 class="section__header">Code Drops</h2>
-    <div class="code-drops__grid">
-      <!-- Code Drop Card 1 -->
-      <div class="code-drop__card">
-        <div class="code-drop__header">
-          <div class="code-drop__title">index.html</div>
-          <div class="code-drop__controls">
-            <div class="code-drop__button code-drop__button--maximize"></div>
-            <div class="code-drop__button code-drop__button--minimize"></div>
-            <div class="code-drop__button code-drop__button--close"></div>
-          </div>
+<!-- Code Drops Section -->
+<section class="section__container code-drops" id="code-drops">
+  <h2 class="section__header">Code Drops</h2>
+  <p>Explore various code snippets that you can use in your projects. These drops include HTML and CSS examples showcasing different UI effects.</p>
+  <div class="code-drops__grid">
+    <!-- Code Drop Card 1 -->
+    <div class="code-drop__card">
+      <div class="code-drop__header">
+        <div class="code-drop__title">index.html</div>
+        <div class="code-drop__controls">
+          <div class="code-drop__button code-drop__button--maximize"></div>
+          <div class="code-drop__button code-drop__button--minimize"></div>
+          <div class="code-drop__button code-drop__button--close"></div>
         </div>
-        <div class="code-drop__content">
-          <pre><code class="language-html">
+      </div>
+      <div class="code-drop__content">
+        <pre><code class="language-html">
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
   &lt;meta charset="UTF-8"&gt;
   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-  &lt;title&gt;Document&lt;/title&gt;
+  &lt;title&gt;Custom Card Effect&lt;/title&gt;
   &lt;link rel="stylesheet" href="styles.css"&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;h1&gt;Hello, World!&lt;/h1&gt;
-  &lt;p&gt;This is a simple HTML page.&lt;/p&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="card"&gt;
+      &lt;div class="face face1"&gt;
+        &lt;div class="content"&gt;
+          &lt;i class="fas fa-laptop-code"&gt;&lt;/i&gt;
+          &lt;h3&gt;Development&lt;/h3&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="face face2"&gt;
+        &lt;div class="content"&gt;
+          &lt;p&gt;Create responsive and interactive websites with modern technologies.&lt;/p&gt;
+          &lt;a href="#" class="custom-button"&gt;Learn More&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-          </code></pre>
-          <button class="btn--copy">Copy Code</button>
-        </div>
+        </code></pre>
+        <button class="btn--copy">Copy Code</button>
       </div>
-  
-      <!-- Code Drop Card 2 -->
-      <div class="code-drop__card">
-        <div class="code-drop__header">
-          <div class="code-drop__title">script.js</div>
-          <div class="code-drop__controls">
-            <div class="code-drop__button code-drop__button--maximize"></div>
-            <div class="code-drop__button code-drop__button--minimize"></div>
-            <div class="code-drop__button code-drop__button--close"></div>
-          </div>
-        </div>
-        <div class="code-drop__content">
-          <pre><code class="language-javascript">
-// Example JavaScript function
-function greet(name) {
-  return 'Hello, ' + name + '!';
-}
-console.log(greet('World'));
-          </code></pre>
-          <button class="btn--copy">Copy Code</button>
-        </div>
-      </div>
+      <p>This HTML code creates a 3D card UI effect with a front and back face that flips on hover, showcasing a simple web development project.</p>
     </div>
-  </section>
+
+    <!-- Code Drop Card 2 -->
+    <div class="code-drop__card">
+      <div class="code-drop__header">
+        <div class="code-drop__title">styles.css</div>
+        <div class="code-drop__controls">
+          <div class="code-drop__button code-drop__button--maximize"></div>
+          <div class="code-drop__button code-drop__button--minimize"></div>
+          <div class="code-drop__button code-drop__button--close"></div>
+        </div>
+      </div>
+      <div class="code-drop__content">
+        <pre><code class="language-css">
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(135deg, #171717, #000000);
+    font-family: 'Raleway', sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    position: relative;
+    margin: 20px;
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s, box-shadow 0.8s;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card .face.face1 {
+    background: #0e0e0e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(0deg);
+}
+
+.card:hover .face.face1 {
+    transform: rotateY(180deg);
+    box-shadow: 
+        0 0 15px #03e9f4,
+        0 0 30px #03e9f4,
+        0 0 45px #03e9f4,
+        0 0 60px #03e9f4;
+}
+
+.card .face.face2 {
+    background: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    transform: rotateY(-180deg);
+}
+
+.card:hover .face.face2 {
+    transform: rotateY(0deg);
+}
+
+.card .face.face1 .content, .card .face.face2 .content {
+    text-align: center;
+    padding: 20px;
+}
+
+.card .face.face1 .content i {
+    font-size: 4em;
+    color: #03e9f4;
+    margin-bottom: 10px;
+    transition: transform 0.8s;
+}
+
+.card:hover .face.face1 .content i {
+    transform: rotate(360deg);
+}
+
+.card .face.face1 .content h3 {
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.card .face.face2 .content {
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure content and button are spaced apart */
+    height: 100%; /* Occupy full height of the card */
+}
+
+.card .face.face2 .content p {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 20px; /* Add margin to separate content and button */
+}
+
+.card .face.face2 .content .custom-button {
+    text-decoration: none;
+    color: white;
+    background: #03e9f4;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: 0.3s ease, padding 0.3s ease;
+    align-self: center; /* Center the button horizontally */
+}
+
+/* Neon glow animation for the button */
+.custom-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(3, 233, 244, 0.5), transparent);
+    transition: 0.5s;
+    animation: neon-glow 1.5s infinite linear;
+}
+
+@keyframes neon-glow {
+    0% { left: -100%; }
+    50%, 100% { left: 100%; }
+}
+
+/* Responsive CSS */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+        margin: 15px 0;
+    }
+
+    .card .face.face1, .card .face.face2 {
+        width: 100%;
+    }
+}
+        </code></pre>
+        <button class="btn--copy">Copy Code</button>
+      </div>
+      <p>This CSS code styles the 3D card UI, including hover effects and responsive design, to create a visually appealing interactive card effect.</p>
+    </div>
+  </div>
+</section>
+
   
   <!-- Connect Section -->
   <section class="section__container" id="connect">
@@ -147,7 +319,7 @@ console.log(greet('World'));
       <div class="footer__col">
         <h4>Follow us on Instagram</h4>
         <p>Follow us on Instagram to get a glimpse of our latest activities and events.</p>
-        <a href="https://instagram.com/cyraxly" class="btn">Follow on Instagram</a>
+        <a href="https://instagram.com/swifttechly" class="btn">Follow on Instagram</a>
       </div>
     </div>
   </section>
